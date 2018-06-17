@@ -1,0 +1,61 @@
+{
+  "configuration": {
+    "rules": [
+      {
+        "period": {
+          "value": 1,
+          "unit": "hour"
+        },
+        "full-backup-period": {
+          "value": 1,
+          "unit": "hour"
+        },
+        "strategy": "full-backup",
+        "locations": [
+          {
+            "original": "/src/orig_1",
+            "backup": "/dst/back_1"
+          }
+        ]
+      },
+      {
+        "period": {
+          "value": 1,
+          "unit": "day"
+        },
+        "full-backup-period": {
+          "value": 1,
+          "unit": "week"
+        },
+        "strategy": "incremental",
+        "locations": [
+          {
+            "original": "/src/orig_2",
+            "backup": "/dst/back_2"
+          }
+        ]
+      },
+      {
+        "period": {
+          "value": 1,
+          "unit": "week"
+        },
+        "full-backup-period": {
+          "value": 1,
+          "unit": "month"
+        },
+        "strategy": "differential",
+        "locations": [
+          {
+            "original": "/src/orig_3_1",
+            "backup": "/dst/back_3_1"
+          },
+          {
+            "original": "/src/orig_3_2",
+            "backup": "/dst/back_3_2"
+          }
+        ]
+      }
+    ]
+  }
+}

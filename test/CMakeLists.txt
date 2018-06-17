@@ -1,0 +1,8 @@
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+include_directories("${PROJECT_SOURCE_DIR}/include")
+file(GLOB TEST_SOURCES "${PROJECT_SOURCE_DIR}/test/*.cpp")
+set(TEST_LIBS BRM)
+add_executable(test_main ${TEST_SOURCES})
+target_link_libraries(test_main ${TEST_LIBS} ${GTEST_LIBRARIES} pthread)
+target_compile_definitions(test_main PRIVATE LOG_LEVEL=3)
